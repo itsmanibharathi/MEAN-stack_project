@@ -26,7 +26,9 @@ function App() {
 
   return (
     <div>
-      <h1>Count Increment App</h1>
+      
+      <h1>React App</h1>
+      <h3>Count Increment App</h3>
       <p>Current Count: {count}</p>
       <button onClick={handleIncrement}>Increment</button>
     </div>

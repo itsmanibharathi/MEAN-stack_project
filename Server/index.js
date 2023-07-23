@@ -49,13 +49,25 @@ app.put('/api/increment', async (req, res) => {
     res.status(500).json({ error: 'Server error' });
 }
 });
-// Angular dist output folder
-// F:\Codestack\project\MEAN-stack_project\client\dist\client\index.html
-app.use(express.static(path.join('../','client/','dist/','client/')));
 
-app.get('/*', function (req, res) {
-  res.sendFile(path.join('../','client/','dist/','client/', 'index.html'));
+// For Angular
+// Angular dist output folder
+// F:\Codestack\project\MEAN-stack_project\clientAngular\dist\client\index.html  
+app.use(express.static(path.join('../')));
+app.get('/', function (req, res) {
+  res.sendFile(path.join('../','clientAngular/','dist/','client/', 'index.html'));
 });
+
+// For React
+// // React dist output folder
+// // F:\Codestack\project\MEAN-stack_project\clientReact\build
+// app.use(express.static(path.join('../','clientReact/','build/')));
+// app.get('/', function (req, res) {
+//   res.sendFile(path.join('../','clientReact/','build/','index.html'));
+// });
+
+
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
