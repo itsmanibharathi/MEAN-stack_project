@@ -53,7 +53,7 @@ app.put('/api/increment', async (req, res) => {
 // For Angular
 // Angular dist output folder
 // F:\Codestack\project\MEAN-stack_project\clientAngular\dist\client\index.html  
-app.use(express.static(path.join('../')));
+app.use(express.static(path.join('../','clientAngular/','dist/','client/')));
 app.get('/', function (req, res) {
   res.sendFile(path.join('../','clientAngular/','dist/','client/', 'index.html'));
 });
